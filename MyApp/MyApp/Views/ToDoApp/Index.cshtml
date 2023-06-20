@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<ToDoAppModel>
+
+@if (TempData["Status"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["status"];
+    </div>
+}
+
+<div class="container col-lg-6 mt-5">
+
+    
+        <div id="myDIV" class="header">
+            <h2>My To Do List</h2>
+            <input type="text" id="myInput" placeholder="Title...">
+        <span type="submit" onclick="addTodo()" class="addBtn">Add</span>
+        </div>
+   
+
+    <ul id="myUL">
+        @foreach (var item in Model)
+        {
+
+            <li id="@item.Id"> <span asp-for="name"> @item.name </span> <button onclick="removeTodo(@item.Id)" class="float-end btn btn-sm btn-danger"> x</button> </li>
+
+        }
+    </ul>
+
+
+
+
+
+</div>
+
+<script>
+
+    function addTodo() {
+
+        var todo = document.getElementById("myInput").value;
+
+        
+
+        
+
+        $.ajax({
+            method: "POST",
+            url: '@Url.Action("Add","ToDoapp")',
+            data: { "name": todo },
+                success: function (data) {
+                var data2 = JSON.parse(data);
+                var li = document.createElement("li");
+                li.innerHTML = '<span asp-for="name">' + todo + '</span><button onclick="removeTodo('+data2.Id+')" class="float-end btn btn-sm btn-danger"> x</button>';
+                li.setAttribute("Id",data2.Id);
+                var ul = document.getElementById("myUL");
+                ul.appendChild(li);
+            },
+            error: function (err) {
+                alert(err.statusText + " " + err.url)
+            }
+        })
+        document.getElementById("myInput").value = "";
+    }
+
+    var list = document.querySelector('ul');
+    list.addEventListener('click', function (e) {
+        if (e.target.tagName === 'LI') {
+            e.target.classList.toggle('checked');
+        }
+    }, false);
+
+    function removeTodo(Id) {
+
+
+        $.ajax({
+            method: "GET",
+            url: '/ToDoapp/Remove/'+Id,
+            success: function (data) {
+                var li = document.getElementById(Id);
+                if (li) {
+                    li.remove();
+
+                   
+                }
+                
+            },
+            error: function (err) {
+                alert(err.statusText + " " + err.url)
+            }
+        })
+
+            
+    }
+
+
+
+
+</script>
+
+
+
+@section addCss{
+    <link href="~/css/ToDoAppStyle.css" rel="stylesheet" />
+}
