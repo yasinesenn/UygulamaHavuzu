@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100;1,200&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
 
 * {
     margin: 0;
@@ -52,9 +52,9 @@ body {
     }
 
 .quote-area .quote {
-    font-size: 22px;
+    font-size: 23px;
     text-align: center;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .content .author {
@@ -81,6 +81,30 @@ body {
     justify-content: space-between
 }
 
+.features ul{
+    display:flex;
+}
+    .features ul li {
+        display:flex;
+        cursor:pointer;
+        transition:all 0.3s ease;
+        list-style: none;
+        margin: 0 5px;
+        height: 47px;
+        width: 47px;
+        align-items:center;
+        border-radius:50%;
+        border: 2px solid darkslategrey;
+        color:darkolivegreen;
+        justify-content:center;
+    }
+    .features ul li:first-child{
+        margin-left:0;
+    }
+ul li:is(:hover,active) {
+    color: darkolivegreen;
+    background: darkslategrey;
+}
 .features button {
     border: none;
     outline: none;
