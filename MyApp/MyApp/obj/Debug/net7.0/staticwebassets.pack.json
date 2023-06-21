@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\BMIStyle.css"
     },
     {
+      "Id": "C:\\Users\\yasin\\Desktop\\UygulamaHavuzu\\MyApp\\MyApp\\wwwroot\\css\\RQuotesStyle.css",
+      "PackagePath": "staticwebassets\\css\\RQuotesStyle.css"
+    },
+    {
       "Id": "C:\\Users\\yasin\\Desktop\\UygulamaHavuzu\\MyApp\\MyApp\\wwwroot\\css\\ToDoAppStyle.css",
       "PackagePath": "staticwebassets\\css\\ToDoAppStyle.css"
     },

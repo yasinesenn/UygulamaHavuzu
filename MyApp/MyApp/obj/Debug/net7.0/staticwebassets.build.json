@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WzNMYWYbjY38yLRdKbsDo3C+qG79EWkCI1FnHKUW+30=",
+  "Hash": "lngpY9tMKDHWU82mDrOVYbZUWRiYMyQHaLfRnjSQumA=",
   "Source": "MyApp",
   "BasePath": "_content/MyApp",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\BMIStyle.css"
+    },
+    {
+      "Identity": "C:\\Users\\yasin\\Desktop\\UygulamaHavuzu\\MyApp\\MyApp\\wwwroot\\css\\RQuotesStyle.css",
+      "SourceId": "MyApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yasin\\Desktop\\UygulamaHavuzu\\MyApp\\MyApp\\wwwroot\\",
+      "BasePath": "_content/MyApp",
+      "RelativePath": "css/RQuotesStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\RQuotesStyle.css"
     },
     {
       "Identity": "C:\\Users\\yasin\\Desktop\\UygulamaHavuzu\\MyApp\\MyApp\\wwwroot\\css\\site.css",

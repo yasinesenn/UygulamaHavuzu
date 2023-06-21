@@ -10,9 +10,6 @@ namespace MyApp.Models
         
         public string name { get; set; }
         
-        public bool isChecked { get; set; }
-
-
 
     }
 }

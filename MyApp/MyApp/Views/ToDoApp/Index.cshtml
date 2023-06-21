@@ -10,7 +10,9 @@
         @TempData["status"];
     </div>
 }
-
+<div>
+    <a href="/Home" class="btn btn-success btn-block">Go To Homepage</a>
+</div>
 <div class="container col-lg-6 mt-5">
 
     
@@ -65,12 +67,12 @@
         document.getElementById("myInput").value = "";
     }
 
-    var list = document.querySelector('ul');
-    list.addEventListener('click', function (e) {
-        if (e.target.tagName === 'LI') {
-            e.target.classList.toggle('checked');
-        }
-    }, false);
+    //var list = document.querySelector('ul');
+    //list.addEventListener('click', function (e) {
+    //    if (e.target.tagName === 'LI' ) {
+    //        e.target.classList.toggle('checked');
+    //    }
+    //}, false);
 
     function removeTodo(Id) {
 
@@ -95,7 +97,34 @@
             
     }
 
+    document.addEventListener("DOMContentLoaded", function () {
+        var list = document.querySelector('ul');
+        var checkedItems = localStorage.getItem('checkedItems');
 
+        if (checkedItems) {
+            var checkedIds = JSON.parse(checkedItems);
+            checkedIds.forEach(function (id) {
+                var li = document.getElementById(id);
+                if (li) {
+                    li.classList.add('checked');
+                }
+            });
+        }
+
+        list.addEventListener('click', function (e) {
+            if (e.target.tagName === 'LI') {
+                e.target.classList.toggle('checked');
+                updateCheckedItems();
+            }
+        }, false);
+
+        function updateCheckedItems() {
+            var checkedIds = Array.from(list.getElementsByClassName('checked'), function (li) {
+                return li.id;
+            });
+            localStorage.setItem('checkedItems', JSON.stringify(checkedIds));
+        }
+    });
 
 
 </script>

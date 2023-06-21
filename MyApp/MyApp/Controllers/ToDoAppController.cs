@@ -52,24 +52,6 @@ namespace MyApp.Controllers
             return Ok();
 
         }
-
-        public IActionResult checkTodo(int? id)
-        {
-            if(id== null)
-            {
-                return NotFound();
-            }
-            var checkTodo = _context.ToDoAppModels.Find(id);
-            if (checkTodo != null)
-            {
-                return NotFound();
-            }
-
-
-
-
-
-
-        }
+        
     }
 }

@@ -45,14 +45,14 @@ namespace MyApp.Controllers
             };
             apps.Add(weatherApp);
 
-            var RQuatesApp = new AppModel()
+            var RQuotesApp = new AppModel()
             {
-                Title = "RandomQuatesApp",
+                Title = "RandomQuotesApp",
                 Description = "Bu uygulama ile karışık özlü sözler okuyabilirsiniz. ",
                 Img = "img/quates.jpg",
-                Url = "/RQUATESapp"
+                Url = "/RQUOTESapp"
             };
-            apps.Add(RQuatesApp);
+            apps.Add(RQuotesApp);
 
             return View(apps);
         }
